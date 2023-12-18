@@ -1,16 +1,16 @@
-"""Installation script for Perseus."""
+"""Installation script for Cyrus."""
 from pathlib import Path
 from setuptools import setup , find_packages
 
-DESCRIPTION = "Perseus_Kit: Elevate FastAPI with Intelligent Caching by Redis"
+DESCRIPTION = "Cyrus: Elevate FastAPI with Intelligent Caching by Redis"
 APP_ROOT = Path(__file__).resolve().parent
 README = (APP_ROOT / "README.md").read_text(encoding = 'utf-8').strip()
 AUTHOR = "itz-Amethyst"
 AUTHOR_EMAIL = "pransermi@gmail.com"
 PROJECT_URLS = {
-    "Bug Tracker": "https://github.com/itz-Amethyst/Perseus/issues",
-    "Source Code": "https://github.com/itz-Amethyst/Perseus",
-    "Documentation": "https://pypi.org/project/Perseus",
+    "Bug Tracker": "https://github.com/itz-Amethyst/Cyrus/issues",
+    "Source Code": "https://github.com/itz-Amethyst/Cyrus",
+    "Documentation": "https://pypi.org/project/Cyrus",
 }
 KEYWORDS = 'Redis, Redis Caching, Redis Connection, Redis client instance'
 
@@ -43,12 +43,12 @@ INSTALL_REQUIRES = [
 
 # Execute version.py and get __version__
 version_globals = {}
-exec(open(str(APP_ROOT / "src/Perseus/version.py")).read(), version_globals)
+exec(open(str(APP_ROOT / "src/Cyrus/version.py")).read(), version_globals)
 __version__ = version_globals['__version__']
 
 
 setup(
-    name="Perseus_Kit",
+    name="Cyrus-Kit",
     description=DESCRIPTION,
     long_description=README,
     long_description_content_type="text/markdown",

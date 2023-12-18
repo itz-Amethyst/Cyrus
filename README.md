@@ -1,20 +1,20 @@
 
 <p class="align-center" style="font-weight: bold">
-  ⏱️ Perseus: Simplifying Caching in FastAPI. 📃
+  ⏱️ Cyrus: Simplifying Caching in FastAPI. 📃
 </p>
 
 <p align="center">
-  <img src="https://media.discordapp.net/attachments/921633563810627588/1185595909216669777/image.png?ex=65902f3c&is=657dba3c&hm=61ffea0067df9ae0255e1e3185cabf700536fb46f561695bfb07aa289a29977f&=&format=webp&quality=lossless&width=610&height=392" alt="Perseus"/>
+  <img src="https://media.discordapp.net/attachments/921633563810627588/1186359324709228575/cyrus_1.jpg?ex=6592f638&is=65808138&hm=fef999c02bee2306eebea241d55aae1a2640f543b77c240ac8fe911d577e120c&=&format=webp&width=723&height=416" alt="Cyrus"/>
 </p>
 
 ------
 
-## Perseus
+## Cyrus
 
-[![PyPI version](https://badge.fury.io/py/Perseus-Kit.svg)](https://badge.fury.io/py/Perseus-Kit)
-![PyPI - Downloads](https://img.shields.io/pypi/dm/Perseus-Kit?color=%234DC71F)
-![PyPI - License](https://img.shields.io/pypi/l/Perseus-Kit?color=%25234DC71F)
-![PyPI - Python Version](https://img.shields.io/pypi/pyversions/Perseus-Kit)
+[![PyPI version](https://badge.fury.io/py/Cyrus-kit.svg)](https://badge.fury.io/py/Cyrus-kit)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/Cyrus-kit?color=%234DC71F)
+![PyPI - License](https://img.shields.io/pypi/l/Cyrus-kit?color=%25234DC71F)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/Cyrus-kit)
 
 ------
 
@@ -41,7 +41,7 @@
 
 ## Installation
 
-`pip install Perseus-Kit`
+`pip install Cyrus-Kit`
 
 ## Usage
 
@@ -49,12 +49,12 @@
 
 #### Step 1: Create an Instance
 
-Create a `Perseus` instance when your application starts by [defining an event handler for the `"startup"` event](https://fastapi.tiangolo.com/advanced/events/) as shown below:
+Create a `Cyrus` instance when your application starts by [defining an event handler for the `"startup"` event](https://fastapi.tiangolo.com/advanced/events/) as shown below:
 
 ```python {linenos=table}
 import logging
 from fastapi import FastAPI , Request , Response
-from Perseus import Perseus
+from Cyrus import Cyrus
 from sqlalchemy.orm import Session
 
 # Your logger config if you have otherwise no need (default)
@@ -69,7 +69,7 @@ app = FastAPI(title = "FastAPI Redis Cache Example")
 
 @app.on_event("startup")
 def startup():
-  redis_cache = Perseus(
+  redis_cache = Cyrus(
     logger_system = logger_system ,
     host_url = REDIS_URL ,
     port = REDIS_PORT ,
@@ -151,7 +151,7 @@ The decorators listed below define several common durations and can be used in p
 For example, instead of `@cache(expire=timedelta(days=1))`, you could use:
 
 ```python
-from Perseus import cache_one_day
+from Cyrus import cache_one_day
 
 @router.get("/{id}", response_model = schemas.PostView)
 @cache_one_day()
@@ -193,7 +193,7 @@ Now, every request for the same `id` generates the same key value (`myapi-cache:
 Here is an endpoint from one of my projects:
 
 ```python
-from Perseus import cache_one_week
+from Cyrus import cache_one_week
 
 @router.get('/get_all_posts')
 @cache_one_week

@@ -8,7 +8,7 @@ from typing import Union
 
 from fastapi import Response
 
-from .client import Perseus
+from .client import Cyrus
 from .util import (
     deserialize_json,
     ONE_DAY_IN_SECONDS,
@@ -40,7 +40,7 @@ def cache(*, expire: Union[int, timedelta] = ONE_YEAR_IN_SECONDS):
             create_response_directly = not response
             if create_response_directly:
                 response = Response()
-            redis_cache = Perseus()
+            redis_cache = Cyrus()
 
             if redis_cache.not_connected or redis_cache.request_is_not_cacheable(
                 request

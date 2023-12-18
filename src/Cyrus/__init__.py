@@ -7,4 +7,4 @@ from .cache import (
     cache_one_week,
     cache_one_year,
 )
-from .client import Perseus
+from .client import Cyrus

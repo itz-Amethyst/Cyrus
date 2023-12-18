@@ -34,7 +34,7 @@ class MetaSingleton(type):
         return cls._instances[cls]
 
 
-class Perseus(metaclass=MetaSingleton):
+class Cyrus(metaclass=MetaSingleton):
     """Communicates with Redis server to cache API response data."""
 
     host_url: str
