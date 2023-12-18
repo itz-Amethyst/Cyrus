@@ -2,9 +2,9 @@
 from pathlib import Path
 from setuptools import setup , find_packages
 
-DESCRIPTION = "Perseus-Kit: Elevate FastAPI with Intelligent Caching by Redis"
-APP_ROOT = Path(__file__).parent
-README = (APP_ROOT / "README.md").read_text().strip()
+DESCRIPTION = "Perseus_Kit: Elevate FastAPI with Intelligent Caching by Redis"
+APP_ROOT = Path(__file__).resolve().parent
+README = (APP_ROOT / "README.md").read_text(encoding = 'utf-8').strip()
 AUTHOR = "itz-Amethyst"
 AUTHOR_EMAIL = "pransermi@gmail.com"
 PROJECT_URLS = {
@@ -16,10 +16,10 @@ KEYWORDS = 'Redis, Redis Caching, Redis Connection, Redis client instance'
 
 
 CLASSIFIERS = [
-    "Framework :: FastAPI"
-    "Development Status :: 5 - Production/Stable",
+    "Framework :: FastAPI",
+    "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
-    "License :: MIT License",
+    "License :: OSI Approved :: MIT License",
     "Natural Language :: English",
     "Natural Language :: Persian",
     "Operating System :: Microsoft :: Windows",
@@ -48,7 +48,7 @@ __version__ = version_globals['__version__']
 
 
 setup(
-    name="Perseus-Kit",
+    name="Perseus_Kit",
     description=DESCRIPTION,
     long_description=README,
     long_description_content_type="text/markdown",
@@ -67,5 +67,5 @@ setup(
     python_requires=">=3.7",
     classifiers=CLASSIFIERS,
     install_requires=INSTALL_REQUIRES,
-    zip_safe=True
+    # zip_safe=True
 )

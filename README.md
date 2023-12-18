@@ -1,6 +1,6 @@
 
 <p class="align-center" style="font-weight: bold">
-  ⏱️ Perseus-Kit: Simplifying Caching in FastAPI. 📃
+  ⏱️ Perseus: Simplifying Caching in FastAPI. 📃
 </p>
 
 <p align="center">
@@ -9,7 +9,7 @@
 
 ------
 
-## Perseus-Kit
+## Perseus
 
 [![PyPI version](https://badge.fury.io/py/Perseus-Kit.svg)](https://badge.fury.io/py/Perseus-Kit)
 ![PyPI - Downloads](https://img.shields.io/pypi/dm/Perseus-Kit?color=%234DC71F)
@@ -54,7 +54,7 @@ Create a `Perseus` instance when your application starts by [defining an event h
 ```python {linenos=table}
 import logging
 from fastapi import FastAPI , Request , Response
-from Perseus-Kit import Perseus , cache
+from Perseus import Perseus
 from sqlalchemy.orm import Session
 
 # Your logger config if you have otherwise no need (default)
@@ -151,7 +151,7 @@ The decorators listed below define several common durations and can be used in p
 For example, instead of `@cache(expire=timedelta(days=1))`, you could use:
 
 ```python
-from Perseus-Kit import cache_one_day
+from Perseus import cache_one_day
 
 @router.get("/{id}", response_model = schemas.PostView)
 @cache_one_day()
@@ -193,7 +193,7 @@ Now, every request for the same `id` generates the same key value (`myapi-cache:
 Here is an endpoint from one of my projects:
 
 ```python
-from Perseus-Kit import cache_one_week
+from Perseus import cache_one_week
 
 @router.get('/get_all_posts')
 @cache_one_week
